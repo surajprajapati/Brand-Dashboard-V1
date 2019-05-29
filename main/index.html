@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Brand Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/6pac-slickgrid/2.4.4/slick.grid.css"
+          type="text/css"/>
+
+    <link rel="stylesheet" href="../resources/css/slickgrid_custom.css"  type="text/css"/>
+
+
+    <style>
+        .slick-cell, .slick-headerrow-column, .slick-footerrow-column {      
+            border-right: 0px !important;
+        }
+        .slick-header-column.ui-state-default, .slick-group-header-column.ui-state-default {
+          border-right: 1px solid #ffffff;
+          background-color:#e3eef4;
+          font-weight: bolder;
+            /* border-bottom: 1 !important;
+            border-top: 0 !important;
+            color: #212121;
+            padding: 10px;
+            font-size: 12px;
+             */
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="col-12 header-nav-bar-padding">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">LoadBoard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1">Client Allocation</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="page-content-wrapper" class="main-body">
+    <div class="container-fluid main-container">
+        <!--    Filter panel code starts here    -->
+        <div class="row filter-panel">
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Choose date" name="date_range"
+                           aria-label="Choose date" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="user_select" hidden>User Type</label>
+                    <select class="form-control" id="user_select">
+                        <option>All Users</option>
+                        <option>Admin</option>
+                        <option>User</option>
+                        <option>Seller</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="category_select" hidden>Category</label>
+                    <select class="form-control" id="category_select">
+                        <option>All category groups</option>
+                        <option>Buyer</option>
+                        <option>Seller</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="channel_select" hidden>Channel</label>
+                    <select class="form-control" id="channel_select">
+                        <option>All channels</option>
+                        <option>Offline</option>
+                        <option>Online</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-secondary">Filter</button>
+            </div>
+        </div>
+        <!--    Filter panel code ends here    -->
+
+        <!-- div overall performance start -->
+        <div class="row">
+	        <div class="col-12">
+	            <div class="card card-no-border">
+	                <div class="card-body card-title-ht">
+	                    <h5 class="card-title card-title-gapp">Overall Performance</h5>
+	                    <small class="card-text text-muted small-fontsize">Note : This dashboard does not include CANCELLED orders in
+	                        calculations.
+	                    </small>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        <div class="row">
+	        <div class="col-12">
+	            <div class="card-deck">
+	                <div class="card card-no-round-border card-cus-ht">
+	                    <div class="card-body card-bgcolor">
+	                        <h5 class="card-title text-center card-title-gap">18,368,035</h5>
+	                        <p class="card-text text-center card-text-cus">REVENUE</p>
+	                    </div>
+	                </div>
+	                <div class="card card-no-round-border card-cus-ht">
+	                    <div class="card-body card-bgcolor">
+	                        <h5 class="card-title text-center card-title-gap">2,918,010(15.89)</h5>
+	                        <p class="card-text text-center card-text-cus">RETURNED(%)</p>
+	                    </div>
+	                </div>
+	                <div class="card card-no-round-border card-cus-ht">
+	                    <div class="card-body card-bgcolor">
+	                        <h5 class="card-title text-center card-title-gap">17,244 & 26,389</h5>
+	                        <p class="card-text text-center card-text-cus">ORDERS & ITEMS</p>
+	                    </div>
+	                </div>
+	                <div class="card card-no-round-border card-cus-ht">
+	                    <div class="card-body card-bgcolor">
+	                        <h5 class="card-title text-center card-title-gap">696</h5>
+	                        <p class="card-text text-center card-text-cus">AVG. REV. PER ITEM</p>
+	                    </div>
+	                </div>
+	                <div class="card card-no-round-border card-cus-ht">
+	                    <div class="card-body card-bgcolor">
+	                        <h5 class="card-title text-center card-title-gap">1,22</h5>
+	                        <p class="card-text text-center card-text-cus">REV.</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        <!-- div overall performance end -->
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="grid-header" style="width:100%;height: 30px;padding-top: 12px;">
+                    <label class="chart-header">Total Orders/Sales View</label>
+                  </div>
+                    <div id="spend_chart"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="grid-header" style="width:100%;height: 30px;padding-top: 12px;margin-bottom: 8px;">
+                    <label class="chart-header">Client-Wise Performance</label>
+                </div>
+                <div id="myGrid" style="width:100%;height:300px;"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- slick grid js start-->
+<script src="https://6pac.github.io/SlickGrid/lib/jquery-1.11.2.min.js"></script>
+<script src="../resources/js/slickgridjs/jquery-ui-1.11.3.min.js"></script>
+<!-- <script src="../lib/jquery-migrate-1.2.1.min.js"></script> -->
+<script src="https://6pac.github.io/SlickGrid/lib/jquery.event.drag-2.3.0.js"></script>
+<!-- nb: sparkline 2.x will cause a memory leak in the current architecture, so we use sparkline 1.x and jquery-migrate -->
+<script src="../resources/js/slickgridjs/jquery.sparkline.min.js"></script>
+
+<script src="../resources/js/slickgridjs/slick.core.js"></script>
+<script src="../resources/js/slickgridjs/slick.editors.js"></script>
+<script src="../resources/js/slickgridjs/slick.grid.js"></script>
+<script src="../resources/js/slickgridjs/slickgrid_script.js"></script>
+<!-- slick grid js start-->
+
+<!-- chart js starts here -->
+
+<script src="https://cdn.jsdelivr.net/npm/vega@4.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc12"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.29.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+
+<script src="../resources/js/chart-js/bar_line_chart.js"></script>
+<script src="../resources/js/chart-js/chart.js"></script>
+<!-- chart js starts here -->
+
+
+<script type="text/javascript">
+
+    // $("#navbar-header").load("header.html");
+
+    function test() {
+        console.log("success");
+    }
+
+    loadChartsView();
+
+
+    $(function () {
+        $("li.nav-item").on("click", function () {
+            $("li.nav-item.active").removeClass("active");
+            $(this).addClass("active");
+
+        });
+
+        $('input[name="date_range"]').daterangepicker({
+            opens: 'left',
+            locale: {
+                format: 'll'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('ll') + ' to ' + end.format('ll'));
+
+        }).on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('ll') + ' - ' + picker.endDate.format('ll'));
+        });
+    });
+
+</script>
+</body>
+</html>

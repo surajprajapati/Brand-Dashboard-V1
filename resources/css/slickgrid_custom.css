@@ -1,0 +1,18 @@
+.slick-cell, .slick-headerrow-column, .slick-footerrow-column {      
+    border-right: 0px !important;
+}
+.slick-header-column.ui-state-default, .slick-group-header-column.ui-state-default {
+  border-right: 1px solid #ffffff;
+  background-color:#e3eef4;
+  font-weight: bolder; 
+}
+.clientCss{
+    color: #65a8e2
+    
+}
+.growthinc{
+    color: green
+}
+.growthdec{
+    color: red
+}
