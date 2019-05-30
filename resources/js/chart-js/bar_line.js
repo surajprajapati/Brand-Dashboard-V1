@@ -49,7 +49,7 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
         {
             "mark": {
                 "type": "bar",
-                "color": "#00ccff",
+                "color": "#478cde",
                 "opacity": 0.9
             },
             "encoding": {
@@ -63,7 +63,7 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
         },
         {
             "mark": {
-                "stroke": "#478cde",
+                "stroke": "#475f91",
                 "type": "line",
                 "interpolate": "monotone"
             },
@@ -89,9 +89,9 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
 
 
 
-const opt_vega = {mode: "vega-lite", "renderer": "canvas", "actions": false};
+const opt_vegabar_line = {mode: "vega-lite", "renderer": "canvas", "actions": false};
 
-const chart_data =[{"posted_date": "2019-01-01", "amount": 10 }, {"posted_date": "2019-01-02",
+const chart_databar_line = [{"posted_date": "2019-01-01", "amount": 10 }, {"posted_date": "2019-01-02",
     "amount": 25
 },
 {
@@ -327,11 +327,11 @@ const chart_data =[{"posted_date": "2019-01-01", "amount": 10 }, {"posted_date":
 var windowheight = $( window ).height()-400;
 
 function loadChartsView() {
-    const spendChartSpec = spendBarLineChart(chart_data, $('#spend_chart').width(),windowheight);
-    renderChart(spendChartSpec);
+    const spendChartSpec = spendBarLineChart(chart_databar_line, $('#bar_line_chart').width(),windowheight);
+    renderChartbar_line(spendChartSpec);
 }
 
 
-function renderChart(spendChartSpec) {
-    vegaEmbed("#spend_chart", spendChartSpec, opt_vega);
+function renderChartbar_line(spendChartSpec) {
+    vegaEmbed("#bar_line_chart", spendChartSpec, opt_vegabar_line);
 }

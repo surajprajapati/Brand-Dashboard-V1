@@ -177,7 +177,7 @@
                 <div class="grid-header" style="width:100%;height: 30px;padding-top: 12px;">
                     <label class="chart-header">Inventory Summary</label>
                   </div>
-                    <div id="spend_chart"></div>
+                    <div id="bar_line_chart"></div>
             </div>
         </div>
 
@@ -208,8 +208,12 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.29.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
 
+
+<script src="../resources/js/common_utilities.js"></script>
+
 <script src="../resources/js/chart-js/grouped_bar_chart.js"></script>
 <script src="../resources/js/chart-js/bar_line.js"></script>
+
 <script src="../resources/js/chart-js/bubble_chart_dcscore.js"></script>
 
 
@@ -225,6 +229,8 @@
     }
     loadGroupedbarChartsView();
     loadChartsView();
+    let windowHeight = $( window ).height()-400;
+    loadBubbleChartsDCView("bubble_dc_score", windowHeight)
 
 
 

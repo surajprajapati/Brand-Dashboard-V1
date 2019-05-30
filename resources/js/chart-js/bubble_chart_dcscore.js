@@ -4,7 +4,7 @@ function bubbleChartDCScore(data, chartWidth, chartHeight) {
     return {
     "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
     "description": "A bubble plot showing the correlation between rate and quantity for 187 countries in the world (modified from an example in Lisa Charlotte Rost's blog post 'One Chart, Twelve Charting Libraries' --http://lisacharlotterost.github.io/2016/05/17/one-chart-code/).",
-    "width": 500,
+    "width": 450,
     "height": 300,
     "data": {
         "values": data
@@ -30,14 +30,20 @@ function bubbleChartDCScore(data, chartWidth, chartHeight) {
                 "zero": false
             },
             "axis": {
-                "minExtent": 30
+                "minExtent": 30,
+                 "title":"WH Space Occupied"
             }
         },
         "x": {
             "field": "quantity",
+             "as": "hello",
             "type": "quantitative",
             "scale": {
                 "type": "log"
+            },
+             "axis": {
+                "minExtent": 30,
+                "title":"Returns Inventory Ageing"
             }
         },
         "size": {
@@ -49,9 +55,9 @@ function bubbleChartDCScore(data, chartWidth, chartHeight) {
             "type": "quantitative",
             "scale": {
                 "range": [
-                    "purple",
-                    "#ff0000",
-                    "teal"
+                    "#478cde",
+                     "#ff9966",
+                    "green"
                 ]
             }
         }
@@ -385,12 +391,10 @@ const bubble_chart_data = [
    "rate": 68.2
  }
 ]
-var chartElementId='#bubble_dc_score';
-function loadBubbleChartsView(chartElementId, windowHeight) {
-    const spendBubbleChartSpec = bubbleChart(bubble_chart_data, $('#bubble_dc_score').width(), windowHeight);
+
+function loadBubbleChartsDCView(chartElementId, windowHeight) {
+    const spendBubbleChartSpec = bubbleChartDCScore(bubble_chart_data, $('#bubble_dc_score').width(), windowHeight);
     renderChart(spendBubbleChartSpec, chartElementId);
 }
 
-function renderChart(spendChartSpec, chartElementId) {
-    vegaEmbed(chartElementId, spendChartSpec, opt_vega);
-}
+
