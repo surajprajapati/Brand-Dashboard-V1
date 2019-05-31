@@ -12,7 +12,7 @@ function stackedBarChart(data, chartWidth, chartHeight) {
             "values":data
         },
         "padding":4,
-        "width": chartWidth-180,
+        "width": chartWidth-200,
         "mark": "bar",
         "config":{"scale": {
                     "barBandPaddingInner":0.2 }},

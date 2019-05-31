@@ -8,8 +8,8 @@ function groupedBarChart(data, chartWidth,chartHeight) {
     console.log("=======================================");
     return {
      "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-     "width": chartWidth-550,
-    "height": chartHeight,
+     "width": chartWidth-500,
+    "height": chartHeight-22,
     "padding":0,
   "data": {  "values": data},
   "transform": [
@@ -60,10 +60,17 @@ const chart_data_groupedbar = [
 {"year":2000,"company":'Over all',"value":2,"total":80}
 ]
 
-var windowheight = $( window ).height()-400;
+var windowheight = $( window ).height();
+
+// $('#myGrid').css('min-height', 30+'px');
 
 function loadGroupedbarChartsView() {
-    const bookRealize = groupedBarChart(chart_data_groupedbar, $('#bookRealize_chart').width(),windowheight);
+
+  var widthdiv = $('#bookRealize_chart_div').width()
+
+  // alert(widthdiv);
+  
+    const bookRealize = groupedBarChart(chart_data_groupedbar, $('#bookRealize_chart_div').width(),windowheight);
     rendeGroupedbarChart(bookRealize);
 }
 
