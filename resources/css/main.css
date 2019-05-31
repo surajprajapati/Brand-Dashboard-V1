@@ -179,3 +179,11 @@ toggle {  0% {
     border: 1px solid #dbdbc9;
 
 }
+
+.circle-right-contents {
+    font-size: 16px;
+    padding-top: 28px;
+    padding-left:2px;
+    color: darkgray;
+
+}
