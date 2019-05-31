@@ -200,3 +200,39 @@ toggle {  0% {
     color: darkgray;
 
 }
+
+/* RTV Styles starts here */
+
+.no-padding-margin {
+    padding: 0;
+    margin: 0;
+}
+
+.rtv-header-container {
+    padding: 15px;
+    background-color: #eeeeee;
+    margin-top: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.date-picker {
+    font-size: 12px;
+}
+
+.rtv-summary-header-container {
+    padding: 20px 0;
+}
+
+.no-border {
+    border: none;
+}
+
+.vendor-text {
+    font-size: 15px;
+}
+
+.info-cards {
+    background-color: #eeeeee;
+}
+
+/* RTV Styles ends here */

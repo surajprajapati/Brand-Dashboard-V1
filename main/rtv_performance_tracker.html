@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Brand Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/main.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+
+</head>
+
+<body>
+<div class="col-12 header-nav-bar-padding">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">LoadBoard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1">Client Allocation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" tabindex="-1">RTV Performance Tracker</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="page-content-wrapper" class="main-body">
+    <div class="container-fluid main-container">
+        <!--    RTV Header code starts here    -->
+        <div class="row rtv-header-container">
+            <div class="col-12">
+                <h6 class="no-padding-margin">RTV Performance Tracker</h6>
+            </div>
+        </div>
+        <!--    RTV Header code ends here    -->
+
+
+        <!--    Summary section starts here    -->
+
+        <!--     Summary header starts here       -->
+        <div class="row d-flex align-items-center rtv-summary-header-container">
+            <div class="col-9">
+                <h6 class="no-padding-margin">Summary</h6>
+            </div>
+
+            <div class="col-3">
+                <div class="input-group">
+                    <input type="text" class="form-control date-picker" placeholder="Choose date" name="date_range"
+                           aria-label="Choose date" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--     Summary header ends here       -->
+
+
+        <!--     Summary body starts here       -->
+        <div class="row">
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card text-center no-border">
+                            <div class="card-body">
+                                <h5 class="no-padding-margin">3</h5>
+                                <p class="no-padding-margin text-muted mt-1 mb-1">Shipments</p>
+                                <a href="#" class="mt-1">All Shipments</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card text-center no-border">
+                            <div class="card-body">
+                                <h5 class="no-padding-margin">$23500.20</h5>
+                                <p class="no-padding-margin text-muted mt-1 mb-1">Expected Credit</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card text-center no-border">
+                            <div class="card-body">
+                                <h5 class="no-padding-margin">508</h5>
+                                <p class="no-padding-margin text-muted mt-1 mb-1">Units Shipped</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card text-center no-border">
+                            <div class="card-body">
+                                <h5 class="no-padding-margin">104 days</h5>
+                                <p class="no-padding-margin text-muted mt-1 mb-1">Avg. Unit Cycle Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card text-center no-border">
+                    <div class="card-body">
+                        <h5 class="no-padding-margin">2</h5>
+                        <p class="no-padding-margin text-muted mt-1 mb-1">Submitted RAs</p>
+                        <a href="#" class="mt-1">All RAs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--     Summary body ends here       -->
+
+
+        <!--    Vendor filter code starts here    -->
+        <div class="row">
+            <div class="col-6">
+                <div class="row-fluid d-flex align-items-center">
+                    <h6 class="no-padding-margin vendor-text">Vendors - All time</h6>
+                    <div class="form-group no-padding-margin ml-1">
+                        <label for="search" hidden>SEARCH</label>
+                        <input type="text" class="form-control vendor-text" id="search" aria-describedby="search"
+                               placeholder="SEARCH">
+                    </div>
+                    <button class="btn btn-primary ml-1 vendor-text">GO</button>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="row-fluid d-flex align-items-center justify-content-end">
+                    <h6 class="no-padding-margin vendor-text">Order By: </h6>
+                    <div class="form-group no-padding-margin ml-2">
+                        <label for="exampleFormControlSelect1" hidden>Example select</label>
+                        <select class="form-control vendor-text" id="exampleFormControlSelect1">
+                            <option>Most Expected Credit</option>
+                            <option>Least Expected Credit</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    Vendor filter code ends here    -->
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-7">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="card info-cards no-border">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <p class="no-padding-margin">Tech Comm</p>
+                                    <h5 class="no-padding-margin">$123082.00</h5>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Expected Credit</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h6 class="no-padding-margin">591</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Units Shipped</p>
+
+                                    <h6 class="no-padding-margin">4 days</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Average Response Time</p>
+
+                                    <h6 class="no-padding-margin">100%</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Approval Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card info-cards no-border">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <p class="no-padding-margin">US Mobile Phones</p>
+                                    <h5 class="no-padding-margin">$105381.26</h5>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Expected Credit</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h6 class="no-padding-margin">809</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Units Shipped</p>
+
+                                    <h6 class="no-padding-margin">1 day</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Response Time</p>
+
+                                    <h6 class="no-padding-margin">100%</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Approval Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card info-cards no-border">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <p class="no-padding-margin">Tech Rabbit LLC</p>
+                                    <h5 class="no-padding-margin">$105,213.85</h5>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Expected Credit</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h6 class="no-padding-margin">611</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Units Shipped</p>
+
+                                    <h6 class="no-padding-margin">1 day</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Response Time</p>
+
+                                    <h6 class="no-padding-margin">100%</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Approval Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card info-cards no-border">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <p class="no-padding-margin">HP Inc</p>
+                                    <h5 class="no-padding-margin">$105,213.85</h5>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Expected Credit</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h6 class="no-padding-margin">611</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Units Shipped</p>
+
+                                    <h6 class="no-padding-margin">1 day</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Response Time</p>
+
+                                    <h6 class="no-padding-margin">100%</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Approval Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card info-cards no-border">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <p class="no-padding-margin">Tech Rabbit LLC</p>
+                                    <h5 class="no-padding-margin">$105,213.85</h5>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Expected Credit</p>
+                                </div>
+                                <hr>
+                                <div>
+                                    <h6 class="no-padding-margin">611</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Total Units Shipped</p>
+
+                                    <h6 class="no-padding-margin">1 day</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Response Time</p>
+
+                                    <h6 class="no-padding-margin">100%</h6>
+                                    <p class="no-padding-margin text-muted mt-1 mb-1">Approval Rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    Summary section ends here    -->
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("li.nav-item").on("click", function () {
+            $("li.nav-item.active").removeClass("active");
+            $(this).addClass("active");
+
+        });
+
+        $('input[name="date_range"]').daterangepicker({
+            opens: 'left',
+            locale: {
+                format: 'll'
+            }
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('ll') + ' to ' + end.format('ll'));
+
+        }).on('apply.daterangepicker', function (ev, picker) {
+            $(this).val(picker.startDate.format('ll') + ' - ' + picker.endDate.format('ll'));
+        });
+    });
+
+</script>
+</body>
+</html>
