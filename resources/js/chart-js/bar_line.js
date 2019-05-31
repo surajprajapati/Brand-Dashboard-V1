@@ -10,7 +10,7 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json",
     "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
     "width": chartWidth-120,
-    "height": chartHeight,
+    "height": 310,
     "padding":4,
      "data": {
         "values": data
