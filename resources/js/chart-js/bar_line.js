@@ -10,7 +10,7 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.6.0.json",
     "description": "A dual axis chart, created by setting y's scale resolution to `\"independent\"`",
     "width": chartWidth-120,
-    "height": 310,
+    "height": 330,
     "padding":4,
      "data": {
         "values": data
@@ -37,12 +37,17 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
     "encoding": {
         "x": {
             "field": "posted_date",
-            "axis": {
+            /*"axis": {
                 "format": "%b-%d",
                 "title": null
-            },
+            },*/
             "type": "nominal",
-            "timeUnit": "date"
+            "axis": {
+                "title": "",
+                "labelAngle": 0
+            }
+         /*   ,
+            "timeUnit": "date"*/
         }
     },
     "layer": [
@@ -91,7 +96,100 @@ function spendBarLineChart(data, chartWidth,chartHeight) {
 
 const opt_vegabar_line = {mode: "vega-lite", "renderer": "canvas", "actions": false};
 
-const chart_databar_line = [{"posted_date": "2019-01-01", "amount": 10 }, {"posted_date": "2019-01-02",
+const chart_databar_line = [
+
+
+{
+ "posted_date": "RTV",
+ "amount": 5
+},
+{
+ "posted_date": "Insurance Claim",
+ "amount": 4
+},
+{
+ "posted_date": "Repair",
+ "amount": 54
+},
+{
+ "posted_date": "Liquidation",
+ "amount": 28
+},
+{
+ "posted_date": "RTV",
+ "amount": 4
+},
+{
+ "posted_date": "Insurance Claim",
+ "amount": 200
+},
+{
+ "posted_date": "Liquidation",
+ "amount": 140
+},
+{
+ "posted_date": "Repair",
+ "amount": 500
+},
+{
+ "posted_date": "RTV",
+ "amount": 54
+},
+{
+ "posted_date": "Insurance Claim",
+ "amount": 90
+},
+{
+ "posted_date": "Repair",
+ "amount": 55
+},
+{
+ "posted_date": "Liquidation",
+ "amount": 5
+},
+{
+ "posted_date": "RTV",
+ "amount": 5
+},
+{
+ "posted_date": "Insurance Claim",
+ "amount": 40
+},
+{
+ "posted_date": "Repair",
+ "amount": 35
+},
+{
+ "posted_date": "Liquidation",
+ "amount": 45
+}
+,
+{
+ "posted_date": "Repair",
+ "amount": 35
+}
+,
+{
+ "posted_date": "Repair",
+ "amount": 35
+}
+,
+{
+ "posted_date": "Liquidation",
+ "amount": 35
+}
+,
+{
+ "posted_date": "Liquidation",
+ "amount": 28
+},
+{
+ "posted_date": "Liquidation",
+ "amount": 45
+}
+]
+
+/*const chart_databar_line = [{"posted_date": "2019-01-01", "amount": 10 }, {"posted_date": "2019-01-02",
     "amount": 25
 },
 {
@@ -322,7 +420,7 @@ const chart_databar_line = [{"posted_date": "2019-01-01", "amount": 10 }, {"post
  "posted_date": "2019-01-29",
  "amount": 7
 }
-]
+]*/
 
 var windowheight = $( window ).height()-400;
 
