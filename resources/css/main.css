@@ -164,6 +164,7 @@ toggle {  0% {
 .circle-size{
   height:130px !important;
   width:130px !important;
+  padding-top:45px !important;
 }
 
 .card-circle{
@@ -178,4 +179,13 @@ toggle {  0% {
     margin-left: 80px;
     border: 1px solid #dbdbc9;
 
+}
+
+.card-circle-container{
+   background:#ffffff;
+   height:150px;
+   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }

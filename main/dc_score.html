@@ -3,36 +3,43 @@
 
 <head>
     <title>Brand Dashboard</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../resources/css/main.css">
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/6pac-slickgrid/2.4.4/slick.grid.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/6pac-slickgrid/2.4.4/slick.grid.css"
+          type="text/css"/>
 
-    <link rel="stylesheet" href="../resources/css/slickgrid_custom.css" type="text/css" />
+    <link rel="stylesheet" href="../resources/css/slickgrid_custom.css" type="text/css"/>
 
 </head>
 
 <body>
 
 
-    <div class="container-fluid">
-        <div class="row" style="margin-bottom:15px;background: #ffffff;height: 50px;">
-            <div class="page-header">DC Score Card</div>
-        </div>
-        <!-- div DC Score Card Circle start -->
-        <div class="row" style="margin-bottom:15px;">
-            <div class="col-md-12" style="background:#ffffff;">
+<div class="container-fluid">
+    <div class="row" style="margin-bottom:15px;background: #ffffff;height:50px;">
+        <div class="page-header">DC Score Card</div>
+    </div>
+    <!-- div DC Score Card Circle start -->
+    <div class="row" style="margin-bottom:15px;">
+        <div class="col-md-12">
+            <div class="col-md-12 card-circle-container" >
                 <div class="card-deck">
                     <div class="card-circle rounded-circle ">
                         <div class="card-body rounded-circle  card-bgcolor circle-size">
@@ -61,85 +68,85 @@
                 </div>
             </div>
         </div>
-        <!-- div DC Score Card Circle end -->
+
+    </div>
+    <!-- div DC Score Card Circle end -->
 
 
-        <div class="row" >
-            <div class="col-md-6 " id="bookRealize_chart_div" >
-                <div class="col-md-12" style="background:#ffffff;">
-                    <div class="grid-header" style="">
-                        <label class="chart-header">Book Value/Realize Value</label>
-                    </div>
-                    <div id="bookRealize_chart"></div>
+    <div class="row">
+        <div class="col-md-6 " id="bookRealize_chart_div">
+            <div class="col-md-12" style="background:#ffffff;">
+                <div class="grid-header" style="">
+                    <label class="chart-header">Book Value/Realize Value</label>
                 </div>
-            </div>
-            <div class="col-md-6" style="padding-left:0" >
-                <div class="col-md-12" style="background:#ffffff;">
-                    <div class="grid-header" >
-                        <label class="chart-header">Client-Wise Performance</label>
-                    </div>
-                    <div id="myGrid" style="width:100%;"></div>
-                </div>
+                <div id="bookRealize_chart"></div>
             </div>
         </div>
-
-        <div class="row" style="margin-top:15px;margin-bottom:15px;">
-            <div class="col-md-6"  style="display: flex;display: -webkit-flex;flex-wrap: wrap;">
-                <div class="col-md-12" style="background:#ffffff;">
-                    <div class="grid-header" >
-                        <label class="chart-header">Inventory Ageing</label>
-                    </div>
-                    <div id="bubble_dc_score"></div>
+        <div class="col-md-6" style="padding-left:0">
+            <div class="col-md-12" style="background:#ffffff;">
+                <div class="grid-header">
+                    <label class="chart-header">Client-Wise Performance</label>
                 </div>
-            </div>
-            <div class="col-md-6" style="padding-left:0">
-                <div class="col-md-12" style="background:#ffffff;">
-                    <div class="grid-header" >
-                        <label class="chart-header">Inventory Summary</label>
-                    </div>
-                    <div id="bar_line_chart"></div>
-                </div>
+                <div id="myGrid" style="width:100%;"></div>
             </div>
         </div>
     </div>
 
+    <div class="row" style="margin-top:15px;margin-bottom:15px;">
+        <div class="col-md-6" style="display: flex;display: -webkit-flex;flex-wrap: wrap;">
+            <div class="col-md-12" style="background:#ffffff;">
+                <div class="grid-header">
+                    <label class="chart-header">Inventory Ageing</label>
+                </div>
+                <div id="bubble_dc_score"></div>
+            </div>
+        </div>
+        <div class="col-md-6" style="padding-left:0">
+            <div class="col-md-12" style="background:#ffffff;">
+                <div class="grid-header">
+                    <label class="chart-header">Inventory Summary</label>
+                </div>
+                <div id="bar_line_chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+<!-- slick grid js start-->
+<script src="https://6pac.github.io/SlickGrid/lib/jquery-1.11.2.min.js"></script>
+<script src="../resources/js/slickgridjs/jquery-ui-1.11.3.min.js"></script>
+<!-- <script src="../lib/jquery-migrate-1.2.1.min.js"></script> -->
+<script src="https://6pac.github.io/SlickGrid/lib/jquery.event.drag-2.3.0.js"></script>
+<!-- nb: sparkline 2.x will cause a memory leak in the current architecture, so we use sparkline 1.x and jquery-migrate -->
+<script src="../resources/js/slickgridjs/jquery.sparkline.min.js"></script>
 
-    <!-- slick grid js start-->
-    <script src="https://6pac.github.io/SlickGrid/lib/jquery-1.11.2.min.js"></script>
-    <script src="../resources/js/slickgridjs/jquery-ui-1.11.3.min.js"></script>
-    <!-- <script src="../lib/jquery-migrate-1.2.1.min.js"></script> -->
-    <script src="https://6pac.github.io/SlickGrid/lib/jquery.event.drag-2.3.0.js"></script>
-    <!-- nb: sparkline 2.x will cause a memory leak in the current architecture, so we use sparkline 1.x and jquery-migrate -->
-    <script src="../resources/js/slickgridjs/jquery.sparkline.min.js"></script>
+<script src="../resources/js/slickgridjs/slick.core.js"></script>
+<script src="../resources/js/slickgridjs/slick.editors.js"></script>
+<script src="../resources/js/slickgridjs/slick.grid.js"></script>
+<script src="../resources/js/slickgridjs/slickgrid_script.js"></script>
+<!-- slick grid js start-->
 
-    <script src="../resources/js/slickgridjs/slick.core.js"></script>
-    <script src="../resources/js/slickgridjs/slick.editors.js"></script>
-    <script src="../resources/js/slickgridjs/slick.grid.js"></script>
-    <script src="../resources/js/slickgridjs/slickgrid_script.js"></script>
-    <!-- slick grid js start-->
+<!-- chart js starts here -->
 
-    <!-- chart js starts here -->
-
-    <script src="https://cdn.jsdelivr.net/npm/vega@4.4.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.29.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
-
-
-    <script src="../resources/js/common_utilities.js"></script>
-
-    <script src="../resources/js/chart-js/grouped_bar_chart.js"></script>
-    <script src="../resources/js/chart-js/bar_line.js"></script>
-
-    <script src="../resources/js/chart-js/bubble_chart_dcscore.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega@4.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc12"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@3.29.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
 
 
-    <!-- chart js starts here -->
+<script src="../resources/js/common_utilities.js"></script>
+
+<script src="../resources/js/chart-js/grouped_bar_chart.js"></script>
+<script src="../resources/js/chart-js/bar_line.js"></script>
+
+<script src="../resources/js/chart-js/bubble_chart_dcscore.js"></script>
 
 
-    <script type="text/javascript">
+<!-- chart js starts here -->
+
+
+<script type="text/javascript">
 
         // $("#navbar-header").load("header.html");
 
@@ -162,7 +169,8 @@
 
         });
 
-    </script>
+
+</script>
 </body>
 
 </html>

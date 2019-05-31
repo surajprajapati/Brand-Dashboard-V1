@@ -80,6 +80,7 @@ border: 0px solid rgba(0,0,0,.125) !important;
 .circle-size{
   height:130px !important;
   width:130px !important;
+  padding-top:45px !important;
 }
 
 .card-circle{
