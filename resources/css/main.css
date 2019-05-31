@@ -188,4 +188,13 @@ toggle {  0% {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  }
+
+
+.circle-right-contents {
+    font-size: 16px;
+    padding-top: 28px;
+    padding-left:2px;
+    color: darkgray;
+
 }

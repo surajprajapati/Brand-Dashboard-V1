@@ -34,18 +34,21 @@ function requiredFieldValidator(value) {
   var grid;
   var data = [];
   var columns = [
-    {id: "Client_ID", name: "Client ID", field: "Client ID"},
+    {id: "Client_ID", name: "Client ID", field: "Client ID",cssClass: 'right-item'},
     {id: "Client", name: "Client(Ext Ref ID)", field: "Client(Ext Ref ID)",cssClass:"clientCss",width:200},
-    {id: "Order", name: "Order", field: "Order"},
+    {id: "Order", name: "Order", field: "Order",cssClass: 'right-item',formatter: numberFormate},
     {id: "sp1", name: "Chart",  asyncPostRender: renderSparkline},
-    {id: "Sales", name: "Sales", field: "Sales"},
+    {id: "Sales", name: "Sales", field: "Sales",cssClass: 'right-item',width:150 ,formatter: numberFormate},
     {id: "sp2", name: "Chart",  asyncPostRender: renderSparkline_sp2},
-    {id: "Sales Returns", name: "Sales Returns", field: "Sales Returns"  },
-    {id: "Sale Prev", name: "Sale Prev", field: "Sale Prev"  },
-    {id: "Growth", name: "Growth",field: "Growth",formatter: growthFormate },
-    {id: "Channel", name: "Channel" ,field: "Channel" }
+    {id: "Sales Returns", name: "Sales Returns", field: "Sales Returns" ,cssClass: 'right-item',formatter: numberFormate },
+    {id: "Sale Prev", name: "Sale Prev", field: "Sale Prev" ,cssClass: 'right-item',formatter: numberFormate },
+    {id: "Growth", name: "Growth",field: "Growth",formatter: growthFormate,cssClass: 'right-item' },
+    {id: "Channel", name: "Channel" ,field: "Channel",cssClass: 'right-item' }
 ];
 
+function numberFormate(row, cell, value, columnDef, dataContext){
+  return value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
 function growthFormate(row, cell, value, columnDef, dataContext) {
     if (value < 0) {
         return  "<span class='growthdec'>"+value+"</span>";
