@@ -69,3 +69,29 @@ border: 0px solid rgba(0,0,0,.125) !important;
 .disappear{
   display:none;
 }
+
+.circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.circle-size{
+  height:130px !important;
+  width:130px !important;
+}
+
+.card-circle{
+       display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1 0 0%;
+    /* flex: 1 0 0%; */
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 80px;
+    margin-bottom: 0;
+    margin-left: 80px;
+    border: 1px solid #dbdbc9;
+
+}
